@@ -6,9 +6,9 @@ import (
 	"log/slog"
 	"math"
 
-	"github.com/ulibaysya/caselya/internal/modules/container"
-	"github.com/ulibaysya/caselya/internal/modules/user"
-	pkgslog "github.com/ulibaysya/caselya/pkg/slog"
+	"github.com/ulibaysya/casenya/internal/modules/container"
+	"github.com/ulibaysya/casenya/internal/modules/user"
+	pkgslog "github.com/ulibaysya/casenya/pkg/slog"
 )
 
 func (s *Service) OpenContainers(ctx context.Context, userID int64, containerID int64, n int) ([]container.OpeningResult, error) {
@@ -66,7 +66,7 @@ func (s *Service) OpenContainers(ctx context.Context, userID int64, containerID 
 		inventoryItems, err = dc.AddItems(ctx, wonItems)
 		if err != nil {
 			s.logger.LogAttrs(ctx, slog.LevelError, "got error when adding items to the user",
-				pkgslog.Error("error", err),
+				pkgslog.Err("error", err),
 			)
 			return fmt.Errorf("adding items to user: %w", err)
 		}

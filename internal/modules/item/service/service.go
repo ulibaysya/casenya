@@ -2,8 +2,9 @@ package service
 
 import (
 	"context"
+	"log/slog"
 
-	"github.com/ulibaysya/caselya/internal/modules/item"
+	"github.com/ulibaysya/casenya/internal/modules/item"
 )
 
 type RNG interface {
@@ -12,16 +13,30 @@ type RNG interface {
 
 type Storage interface {
 	CreateItem(ctx context.Context, name string, price int64, tags []item.Tag) (int64, error)
+	FindItem(ctx context.Context, id int64) (item.Item, error)
+	SaveItemImageURL(ctx context.Context, id int64, url string) error
+}
+
+type BlobStorage interface {
+	// The first string is a full URL where image should be uploaded.
+	// The second string is a full URL where uploaded image will live.
+	CreateItemImageUploadURL(ctx context.Context) (string, string, error)
+	// // The second string is an object key where uploaded image will live.
+	// GetUploadedItemImage(ctx context.Context, key string) (io.Reader, error)
 }
 
 type Service struct {
-	strg Storage
-	rng  RNG
+	logger   *slog.Logger
+	strg     Storage
+	blobStrg BlobStorage
+	rng      RNG
 }
 
-func New(strg Storage, rng RNG) *Service {
+func New(logger *slog.Logger, strg Storage, blobStrg BlobStorage, rng RNG) *Service {
 	return &Service{
-		strg: strg,
-		rng:  rng,
+		logger:   logger,
+		strg:     strg,
+		blobStrg: blobStrg,
+		rng:      rng,
 	}
 }

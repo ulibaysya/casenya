@@ -2,21 +2,18 @@ package service
 
 import (
 	"context"
-	"log/slog"
 )
 
 type Storage interface {
-	CreateKey(ctx context.Context, name string, public bool, values []string) error
+	CreateTag(ctx context.Context, name string, isPublic bool, values []string) error
 }
 
 type Service struct {
-	logger *slog.Logger
-	strg   Storage
+	strg Storage
 }
 
-func New(logger *slog.Logger, strg Storage) *Service {
+func New(strg Storage) *Service {
 	return &Service{
-		logger: logger,
-		strg:   strg,
+		strg: strg,
 	}
 }

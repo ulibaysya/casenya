@@ -6,8 +6,8 @@ import (
 
 	"github.com/pashagolub/pgxmock/v5"
 	"github.com/stretchr/testify/require"
-	"github.com/ulibaysya/caselya/internal/modules/container"
-	"github.com/ulibaysya/caselya/internal/modules/item"
+	"github.com/ulibaysya/casenya/internal/modules/container"
+	"github.com/ulibaysya/casenya/internal/modules/item"
 )
 
 func TestFindContainer_Success(t *testing.T) {

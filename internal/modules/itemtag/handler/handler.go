@@ -3,12 +3,12 @@ package handler
 import (
 	"context"
 
-	v1 "github.com/ulibaysya/caselya/api/caselya/hub/v1"
+	v1 "github.com/ulibaysya/casenya/api/casenya/hub/v1"
 	"google.golang.org/grpc"
 )
 
 type Service interface {
-	CreateKey(ctx context.Context, name string, public bool, values []string) error
+	CreateTag(ctx context.Context, key string, is_public bool, values []string) error
 }
 
 type Handler struct {

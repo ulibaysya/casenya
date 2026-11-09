@@ -1,6 +1,6 @@
 package container
 
-import "github.com/ulibaysya/caselya/internal/modules/item"
+import "github.com/ulibaysya/casenya/internal/modules/item"
 
 type Container struct {
 	ID    int64

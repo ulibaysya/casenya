@@ -8,9 +8,9 @@ import (
 	"context"
 
 	mock "github.com/stretchr/testify/mock"
-	"github.com/ulibaysya/caselya/internal/modules/container"
-	"github.com/ulibaysya/caselya/internal/modules/item"
-	"github.com/ulibaysya/caselya/internal/modules/user"
+	"github.com/ulibaysya/casenya/internal/modules/container"
+	"github.com/ulibaysya/casenya/internal/modules/item"
+	"github.com/ulibaysya/casenya/internal/modules/user"
 )
 
 // NewMockContainerStorage creates a new instance of MockContainerStorage. It also registers a testing interface on the mock and a cleanup function to assert the mocks expectations.

@@ -9,10 +9,10 @@ import (
 
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
-	"github.com/ulibaysya/caselya/internal/modules/container"
-	"github.com/ulibaysya/caselya/internal/modules/item"
-	"github.com/ulibaysya/caselya/internal/modules/user"
-	pkgslog "github.com/ulibaysya/caselya/pkg/slog"
+	"github.com/ulibaysya/casenya/internal/modules/container"
+	"github.com/ulibaysya/casenya/internal/modules/item"
+	"github.com/ulibaysya/casenya/internal/modules/user"
+	pkgslog "github.com/ulibaysya/casenya/pkg/slog"
 )
 
 func TestOpeningContainers_Success(t *testing.T) {

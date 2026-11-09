@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package casenya.hub.v1;
+
+option go_package = "github.com/ulibaysya/casenya/api/casenya/hub/v1";
+
+service ItemTagService {
+  rpc CreateTag(CreateTagRequest) returns (CreateTagResponse);
+}
+
+message CreateTagRequest {
+  string key = 1;
+  bool is_public = 2;
+  repeated string values = 3;
+}
+
+message CreateTagResponse {}

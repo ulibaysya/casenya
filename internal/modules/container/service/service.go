@@ -4,9 +4,9 @@ import (
 	"context"
 	"log/slog"
 
-	"github.com/ulibaysya/caselya/internal/modules/container"
-	"github.com/ulibaysya/caselya/internal/modules/item"
-	"github.com/ulibaysya/caselya/internal/modules/user"
+	"github.com/ulibaysya/casenya/internal/modules/container"
+	"github.com/ulibaysya/casenya/internal/modules/item"
+	"github.com/ulibaysya/casenya/internal/modules/user"
 )
 
 type ContainerStorage interface {

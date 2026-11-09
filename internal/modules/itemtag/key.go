@@ -1,7 +1,7 @@
 package itemtag
 
-type Key struct {
-	Name     string
+type Tag struct {
+	Key      string
 	IsPublic bool
 	Values   []string
 }

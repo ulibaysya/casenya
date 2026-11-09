@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package casenya.hub.v1;
+
+option go_package = "github.com/ulibaysya/casenya/api/casenya/hub/v1";
+
+service ItemService {
+  rpc CreateItem(CreateItemRequest) returns (CreateItemResponse);
+  rpc FindItem(FindItemRequest) returns (FindItemResponse);
+  rpc FindPublicItem(FindPublicItemRequest) returns (FindPublicItemResponse);
+  rpc UploadItemImage(UploadItemImageRequest) returns (UploadItemImageResponse);
+}
+
+// CreateItem
+
+message CreateItemRequest {
+  string name = 1;
+  int64 price = 2;
+  repeated Tag tags = 3;
+}
+
+message CreateItemResponse {
+  int64 id = 1;
+}
+
+message Tag {
+  string key = 1;
+  repeated string values = 2;
+}
+
+// FindItem
+
+message FindItemRequest {
+  int64 id = 1;
+}
+
+message FindItemResponse {
+  string name = 1;
+  string image_url = 2;
+  repeated FullTag tags = 3;
+  repeated Price prices = 4;
+}
+
+message FullTag {
+  string key = 1;
+  bool is_public = 2;
+  repeated string values = 3;
+}
+
+message Price {
+  string provider = 1;
+  int64 value = 2;
+}
+
+// FindPublicItem
+
+message FindPublicItemRequest {
+  int64 id = 1;
+}
+
+message FindPublicItemResponse {
+  string name = 1;
+  string image_url = 2;
+  repeated Tag tags = 3;
+  int64 price = 4;
+}
+
+// UploadItemImage
+
+message UploadItemImageRequest {
+  int64 id = 1;
+}
+
+message UploadItemImageResponse {
+  string upload_url = 1;
+}

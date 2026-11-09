@@ -1,0 +1,157 @@
+syntax = "proto3";
+
+package casenya.hub.v1;
+
+option go_package = "github.com/ulibaysya/casenya/api/casenya/hub/v1";
+
+service UserService {
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+  rpc FindUser(FindUserRequest) returns (FindUserResponse);
+
+  // rpc UploadUserImage(UploadUserImageRequest) returns (UploadUserImageResponse);
+
+  rpc GetUserBalance(GetUserBalanceRequest) returns (GetUserBalanceResponse);
+  rpc ChangeUserBalance(ChangeUserBalanceRequest) returns (ChangeUserBalanceResponse);
+  rpc SetUserBalance(SetUserBalanceRequest) returns (SetUserBalanceResponse);
+
+  rpc SetUserTradeURL(SetUserTradeURLRequest) returns (SetUserTradeURLResponse);
+
+  rpc ListUserItems(ListUserItemsRequest) returns (ListUserItemsResponse);
+  rpc ShowUserItem(ShowUserItemRequest) returns (ShowUserItemResponse);
+  rpc SellUserItem(SellUserItemRequest) returns (SellUserItemResponse);
+  rpc WithdrawUserItem(WithdrawUserItemRequest) returns (WithdrawUserItemResponse);
+
+  // rpc AddUserItem(AddUserItemRequest) returns (AddUserItemResponse);
+}
+
+// CreateUser
+
+message CreateUserRequest {
+  string name = 1;
+}
+
+message CreateUserResponse {
+  int64 id = 1;
+}
+
+// FindUser
+
+message FindUserRequest {
+  int64 id = 1;
+}
+
+message FindUserResponse {
+  string name = 1;
+  string image_url = 2;
+}
+
+// UploadUserImage
+
+message UploadUserImageRequest {
+  int64 id = 1;
+}
+
+message UploadUserImageResponse {
+  string upload_url = 1;
+}
+
+// GetUserBalance
+
+message GetUserBalanceRequest {
+  int64 id = 1;
+}
+
+message GetUserBalanceResponse {
+  string name = 1;
+  string image_url = 2;
+}
+
+// ChangeUserBalance
+
+message ChangeUserBalanceRequest {
+  int64 id = 1;
+}
+
+message ChangeUserBalanceResponse {
+  string name = 1;
+  string image_url = 2;
+}
+
+// SetUserBalance
+
+message SetUserBalanceRequest {
+  int64 id = 1;
+}
+
+message SetUserBalanceResponse {
+  string name = 1;
+  string image_url = 2;
+}
+
+// SetUserTradeURL
+
+message SetUserTradeURLRequest {
+  int64 id = 1;
+}
+
+message SetUserTradeURLResponse {
+  string name = 1;
+  string image_url = 2;
+}
+
+// ListUserItems
+
+message ListUserItemsRequest {
+  int64 id = 1;
+}
+
+message ListUserItemsResponse {
+  string name = 1;
+  string image_url = 2;
+}
+
+// ShowUserItem
+
+message ShowUserItemRequest {
+  int64 id = 1;
+}
+
+message ShowUserItemResponse {
+  string name = 1;
+  string image_url = 2;
+}
+
+// SellUserItem
+
+message SellUserItemRequest {
+  int64 id = 1;
+}
+
+message SellUserItemResponse {
+  string name = 1;
+  string image_url = 2;
+}
+
+// WithdrawUserItem
+
+message WithdrawUserItemRequest {
+  int64 id = 1;
+}
+
+message WithdrawUserItemResponse {
+  string name = 1;
+  string image_url = 2;
+}
+
+
+
+// // AddUserItem
+//
+// message AddUserItemRequest {
+//   int64 id = 1;
+// }
+//
+// message AddUserItemResponse {
+//   string name = 1;
+//   string image_url = 2;
+// }

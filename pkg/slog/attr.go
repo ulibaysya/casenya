@@ -4,7 +4,7 @@ import (
 	"log/slog"
 )
 
-func Error(key string, value error) slog.Attr {
+func Err(key string, value error) slog.Attr {
 	if wrappedErr, ok := value.(interface{ Unwrap() []error }); ok {
 		errs := wrappedErr.Unwrap()
 		strErrors := make([]string, len(errs))

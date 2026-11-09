@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	"github.com/jackc/pgx/v5"
-	"github.com/ulibaysya/caselya/internal/modules/container"
-	"github.com/ulibaysya/caselya/internal/modules/item"
+	"github.com/ulibaysya/casenya/internal/modules/container"
+	"github.com/ulibaysya/casenya/internal/modules/item"
 )
 
 func (s *Storage) FindContainer(ctx context.Context, id int64) (container.Container, error) {
