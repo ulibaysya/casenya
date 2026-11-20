@@ -1,4 +1,4 @@
-package blobstrg
+package blobstorage
 
 import (
 	"context"
@@ -8,7 +8,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 )
 
-func (s *BlobStorage) CreateItemUploadURL(ctx context.Context) (string, string, error) {
+func (s *BlobStorage) CreateItemImageUploadURL(ctx context.Context) (string, string, error) {
 	key := path.Join(s.keyFunc(), "img.png")
 
 	req, err := s.pc.PresignPutObject(ctx, &s3.PutObjectInput{

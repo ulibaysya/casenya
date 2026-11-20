@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package casenya.hub.user.v1;
+
+option go_package = "github.com/ulibaysya/casenya/api/casenya/hub/user/v1";
+
+service BalanceService {
+  rpc GetUserBalance(GetUserBalanceRequest) returns (GetUserBalanceResponse);
+  rpc ChangeUserBalance(ChangeUserBalanceRequest) returns (ChangeUserBalanceResponse);
+  rpc SetUserBalance(SetUserBalanceRequest) returns (SetUserBalanceResponse);
+}
+
+// GetUserBalance
+
+message GetUserBalanceRequest {
+  int64 id = 1;
+}
+
+message GetUserBalanceResponse {
+  string name = 1;
+  string image_url = 2;
+}
+
+// ChangeUserBalance
+
+message ChangeUserBalanceRequest {
+  int64 id = 1;
+}
+
+message ChangeUserBalanceResponse {
+  string name = 1;
+  string image_url = 2;
+}
+
+// SetUserBalance
+
+message SetUserBalanceRequest {
+  int64 id = 1;
+}
+
+message SetUserBalanceResponse {
+  string name = 1;
+  string image_url = 2;
+}
+

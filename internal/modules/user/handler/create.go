@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	v1 "github.com/ulibaysya/casenya/api/casenya/hub/v1"
+	v1 "github.com/ulibaysya/casenya/api/casenya/hub/user/v1"
 	"github.com/ulibaysya/casenya/internal/modules/user"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

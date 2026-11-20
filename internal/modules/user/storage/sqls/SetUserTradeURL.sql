@@ -1,3 +1,3 @@
 UPDATE users
 SET trade_url = $1
-WHERE user = $2;
+WHERE id = $2;

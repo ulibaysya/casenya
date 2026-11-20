@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package casenya.hub.user.v1;
+
+option go_package = "github.com/ulibaysya/casenya/api/casenya/hub/user/v1";
+
+service OpaqueTokenService {
+  rpc GenerateUserOpaqueToken(GenerateUserOpaqueTokenRequest) returns (GenerateUserOpaqueTokenResponse);
+  rpc ExchangeUserOpaqueToken(ExchangeUserOpaqueTokenRequest) returns (ExchangeUserOpaqueTokenResponse);
+}
+
+// GenerateUserOpaqueToken
+
+message GenerateUserOpaqueTokenRequest {
+  int64 id = 1;
+}
+
+message GenerateUserOpaqueTokenResponse {
+  string token = 1;
+}
+
+// ExchangeUserOpaqueToken
+
+message ExchangeUserOpaqueTokenRequest {
+  string token = 1;
+}
+
+message ExchangeUserOpaqueTokenResponse {
+  int64 id = 1;
+}

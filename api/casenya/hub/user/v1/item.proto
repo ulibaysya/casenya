@@ -1,0 +1,84 @@
+syntax = "proto3";
+
+package casenya.hub.user.v1;
+
+option go_package = "github.com/ulibaysya/casenya/api/casenya/hub/user/v1";
+
+service ItemService {
+  rpc SetUserTradeURL(SetUserTradeURLRequest) returns (SetUserTradeURLResponse);
+
+  rpc ListUserItems(ListUserItemsRequest) returns (ListUserItemsResponse);
+  rpc ShowUserItem(ShowUserItemRequest) returns (ShowUserItemResponse);
+  rpc SellUserItem(SellUserItemRequest) returns (SellUserItemResponse);
+  rpc WithdrawUserItem(WithdrawUserItemRequest) returns (WithdrawUserItemResponse);
+
+  // rpc AddUserItem(AddUserItemRequest) returns (AddUserItemResponse);
+}
+
+// SetUserTradeURL
+
+message SetUserTradeURLRequest {
+  int64 id = 1;
+}
+
+message SetUserTradeURLResponse {
+  string name = 1;
+  string image_url = 2;
+}
+
+// ListUserItems
+
+message ListUserItemsRequest {
+  int64 id = 1;
+}
+
+message ListUserItemsResponse {
+  string name = 1;
+  string image_url = 2;
+}
+
+// ShowUserItem
+
+message ShowUserItemRequest {
+  int64 id = 1;
+}
+
+message ShowUserItemResponse {
+  string name = 1;
+  string image_url = 2;
+}
+
+// SellUserItem
+
+message SellUserItemRequest {
+  int64 id = 1;
+}
+
+message SellUserItemResponse {
+  string name = 1;
+  string image_url = 2;
+}
+
+// WithdrawUserItem
+
+message WithdrawUserItemRequest {
+  int64 id = 1;
+}
+
+message WithdrawUserItemResponse {
+  string name = 1;
+  string image_url = 2;
+}
+
+
+
+// // AddUserItem
+//
+// message AddUserItemRequest {
+//   int64 id = 1;
+// }
+//
+// message AddUserItemResponse {
+//   string name = 1;
+//   string image_url = 2;
+// }

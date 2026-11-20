@@ -1,4 +1,4 @@
-package blobstrg
+package blobstorage
 
 import (
 	"context"

@@ -1,4 +1,4 @@
-package integration
+package postgres
 //
 // import (
 // 	"testing"

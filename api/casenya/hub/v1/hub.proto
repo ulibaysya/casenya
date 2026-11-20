@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package casenya.hub.v1;
 
-:ption go_package = "github.com/ulibaysya/casenya/api/casenya/hub/v1";
+option go_package = "github.com/ulibaysya/casenya/api/casenya/hub/v1";
 
 service ContainersService {
   rpc OpenContainers(OpenContainersRequest) returns (OpenContainersResponse);

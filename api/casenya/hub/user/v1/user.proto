@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package casenya.hub.user.v1;
+
+option go_package = "github.com/ulibaysya/casenya/api/casenya/hub/user/v1";
+
+service UserService {
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+  rpc FindUser(FindUserRequest) returns (FindUserResponse);
+  rpc UploadUserImage(UploadUserImageRequest) returns (UploadUserImageResponse);
+}
+
+// CreateUser
+
+message CreateUserRequest {
+  string name = 1;
+}
+
+message CreateUserResponse {
+  int64 id = 1;
+}
+
+// FindUser
+
+message FindUserRequest {
+  int64 id = 1;
+}
+
+message FindUserResponse {
+  string name = 1;
+  string image_url = 2;
+}
+
+// UploadUserImage
+
+message UploadUserImageRequest {
+  int64 id = 1;
+}
+
+message UploadUserImageResponse {
+  string upload_url = 1;
+}
